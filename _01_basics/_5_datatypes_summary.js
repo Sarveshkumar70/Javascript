@@ -35,3 +35,29 @@ console.log(typeof scorePoint );
 console.log(typeof bigNum ); 
 
 // Read -->// https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+// **********************************************************
+
+// types of memory-> stack(primitive) and heap(non-primitive)
+
+// stack(primitive) example
+let mystr="Ram sweet shop"
+let anotherStr=mystr
+
+anotherStr="hlo ji"
+console.log(anotherStr);
+console.log(mystr);
+
+// heap(reference)
+let user1={
+   email:"ustadji@google.com",
+   upi:"user54545bl"
+}
+
+let user2=user1
+
+user2.email="fighterGame@google.com"
+
+console.log(user1.email);
+console.log(user2.email);
