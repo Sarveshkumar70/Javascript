@@ -16,8 +16,12 @@ let anime_antagonist = ["MarshalDTeach", "OneForAll", "Sakuna"]
 
 
 // spread syntax(...) -> analogy to remember -> when a glass breaks, it spreads into pieces 
-let all_characters = [...anime_antagonist, ...anime_protagonist]
+// let all_characters = [...anime_antagonist, ...anime_protagonist]
 // console.log(all_characters);
+// or
+//  anime_protagonist.push(...anime_antagonist)
+// console.log(anime_protagonist);
+
 
 
 // flat()
@@ -32,9 +36,9 @@ let complex_array = [1, 2, 3, [4 , 5 , 6 ], 7 ,8, [9, [10, 11]], 12]
 // console.log(Array.from({name : "raman"})); // interesting
 
 
-let marks_phy = 56
-let marks_chem = 78
-let marks_math = 77
-console.log(Array.of(marks_chem, marks_math, marks_phy)); // kind of binds together
+// let marks_phy = 56
+// let marks_chem = 78
+// let marks_math = 77
+// console.log(Array.of(marks_chem, marks_math, marks_phy)); // kind of binds together
 
 

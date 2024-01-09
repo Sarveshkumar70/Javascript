@@ -35,12 +35,18 @@ let arr1 = new Array(10,20,30,40,50)
 
 
 // slice & splice -> difference -> splice manipulates the Original array
-console.log("A",arr1); // before slice
+// console.log("A",arr1); // before slice
 
-const newArray = arr1.slice(0,4)
-console.log(newArray);
-console.log("B",arr1); //after slice
+// const newArray = arr1.slice(0,4)
+// console.log(newArray);
+// console.log("B",arr1); //after slice
 
-const newArray2 = arr1.splice(0,4) 
-console.log(newArray2);
-console.log("C",arr1); // after splice
+// const newArray2 = arr1.splice(0,4) 
+// console.log(newArray2);
+// console.log("C",arr1); // after splice
+
+//  splice(start, deleteCount, item1, item2, /* …, */ itemN)
+// let arr3 = [100,200,300,400,500,600]
+// const newArr = arr3.splice(1,4,1000)
+// console.log(newArr); // 200, 300, 400, 500
+// console.log(arr3); // 100, 1000, 600
