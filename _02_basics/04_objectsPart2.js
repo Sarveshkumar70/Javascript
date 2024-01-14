@@ -83,3 +83,33 @@ const users = [
 // console.log(Object.hasOwn(instagramLite,'userName'));
 
 
+// part3
+const person = {
+    nameIs : "manu",
+    weightInKg : 70,
+    gender : "male" 
+}
+
+// console.log(person);
+
+// Destructuring [happens in objects & array(rarely)]
+const {nameIs} = person
+const {weightInKg : weight} = person // name is shorted
+
+// console.log(nameIs);
+// console.log(weight);
+// console.log(nameIs === person.nameIs);
+
+// API data format is normally in JSON , in old times it was used to be XML
+// {
+//     "name" : "raman",
+//     "sex" : "female",
+//     "age" : 20
+// }
+
+// the format can also be (objects in array)->
+// [
+//     {},
+//     {},
+//     {}
+// ]
