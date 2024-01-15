@@ -36,4 +36,57 @@ function whoLoggedIn (username) {    // if (username = "harry") is passed  as pa
     return `${username} just loggedIn`
 }
 // console.log(whoLoggedIn("parmvir"));
-console.log(whoLoggedIn(null)); // if no argument is passed, then it will result in undefined value
+// console.log(whoLoggedIn(null)); // if no argument is passed, then it will result in undefined value
+
+
+
+// Part - 2
+
+// what if we don't know the exact number of arguments passed to a function, then how can we define parameters of a function -> we can use rest parameters i.e.
+
+// function calculateTheSum(...num){ // rest parameter
+//     return num
+// }
+// console.log(calculateTheSum(41,400,500,6000,70000))
+
+
+function calculateTheSum(val1, val2, ...num){ 
+    console.log(val1);
+    console.log(val2);
+    console.log(num);
+}
+// calculateTheSum(10,200,3000,40000,500000,111)
+
+
+// passing object into a function
+const myProfile = {
+    name : "ustadJi",
+    age : 28,
+    gender : "male",
+    nationality : "Indian"
+}
+
+function printProfile(objectReceived) {
+    console.log(`My name is ${objectReceived.name} , i am ${objectReceived.age} years old ${objectReceived.gender} & my nationality is ${objectReceived.nationality}`);
+}
+
+// printProfile(myProfile) // or you can directly pass an object like ->
+// printProfile({
+//     name : "ustadJi",
+//     age : 28,
+//     gender : "male",
+//     nationality : "Indian"
+// }) 
+
+
+// passing an array into function
+
+const myArray = ["harman", "raman", "prabhu", "vishali"]
+
+function printThirdName(getArray){
+    return getArray[2]
+}
+
+// console.log(printThirdName(myArray)); //or
+
+// console.log(printThirdName(["harman", "raman", "prabhu", "vishali"]));
