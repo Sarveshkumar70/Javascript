@@ -9,7 +9,7 @@ const onlineCourse = {
 
     myFunc : function(){
         console.log(`${this.username} has purchased the ${this.Subject} course`)
-        // console.log(this);  // w
+        // console.log(this);  // will tell current reference
     }
 }
 
@@ -76,5 +76,3 @@ const function1 = (num1, num2) => ({mynameIs : "Pappu"})
 
 
 console.log(function1(7,2))
-
-
