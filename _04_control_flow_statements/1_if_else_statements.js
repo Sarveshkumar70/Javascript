@@ -46,8 +46,7 @@ const balance = 45454
 // if (true) console.log(balance);
 
 // below code is not good practice, code not readible at all, not recommended
-// if (true) console.log(balance), console.log("you can write more statements separated by commas & at end a 
-// semicolon");
+// if (true) console.log(balance), console.log("you can write more statements separated by commas & at end a semicolon");
 
 
 // bike license criteria
