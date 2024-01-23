@@ -69,7 +69,10 @@ const isFunction = () => {
 // if curly braces {} in arrow function are used, then return is  necessary to be written in function (in case, is needed) oherwise if {} not used in arrow function, then no need to write return example ->
 
 // implicit return [used in React]
-// const function1 = (num1, num2) => (num1 + num2)
+// const function1 = (num1, num2) => (num1 + num2)    
+    //same as ->
+// const function1 = (num1, num2) => num1 + num2
+
 
 // returing object implicitly
 const function1 = (num1, num2) => ({mynameIs : "Pappu"})
