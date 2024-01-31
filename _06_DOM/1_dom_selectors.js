@@ -72,4 +72,109 @@
 // HTMLCollection [p#myFirstPara.paraClass, myFirstPara: p#myFirstPara.paraClass]
 
 
-// 5. 
+// 5. querySelector()
+// can select all types of css selectors 
+
+// document.querySelector('h1')                           // selects first occurrence of first selector
+// <h1 class=​"myFirstHeading">​ DOM ​</h1>​
+
+// document.querySelector('h2')
+// <h2 id=​"firstH2Id">​Lorem ipsum dolor sit amet consectetur adipisicing.​</h2>​
+
+// document.querySelector('.paraClass')                         // for class
+// <p id=​"myFirstPara" class=​"paraClass">​…​</p>​
+
+// document.querySelector('#myFirstPara')                       // for id
+// <p id=​"myFirstPara" class=​"paraClass">​…​</p>​
+
+// document.querySelector('input[type = "button"]')
+// <input type=​"button" value=​" ">​
+
+
+
+// Applying custom css on li in ul  
+// 1. document.querySelector("ul")
+// <ul>​…​</ul>​
+
+// 2. const myul = document.querySelector("ul")
+// undefined
+
+// 3. myul.querySelector("li")
+// <li>​…​</li>​
+
+// 4. const myli = myul.querySelector("li")
+// undefined
+
+// 5. myli.style.backgroundColor = "grey"
+// 'grey'
+
+// 6. myli.style.borderRadius = "20px"
+// '20px'
+
+
+// NodeList & HTMLCollection are different from array despite having some similarities
+
+// 6. querySelectorAll()
+
+// const myliList = document.querySelectorAll("li")
+// undefined
+
+// myliList
+// NodeList(3) [li, li, li]
+
+// myliList.style.backgroundColor = "pink"
+// VM2168:1 Uncaught TypeError: Cannot set properties of undefined (setting 'backgroundColor')
+//     at <anonymous>:1:32
+// (anonymous) @ VM2168:1
+
+// myliList[0].style.backgroundColor = "pink"         // correct way
+// 'pink'
+
+// correct way to loop the NodeList
+// myliList.forEach( (li) => {
+//     li.style.backgroundColor = "green"
+// })
+
+
+
+// HTMLCollection
+
+// document.getElementsByClassName("li-item")
+// HTMLCollection(4) [li.li-item, li.li-item, li.li-item, li.li-item]
+
+// const tempClassList = document.getElementsByClassName("li-item")
+// undefined
+
+// tempClassList
+// HTMLCollection(4) [li.li-item, li.li-item, li.li-item, li.li-item]
+
+// not correct way to loop the HTMLCollection
+// tempClassList.foreach( (li)=>{
+//     console.log(li)
+// })
+// VM2753:1 Uncaught TypeError: tempClassList.foreach is not a function
+//     at <anonymous>:1:15
+
+
+// for looping it, convert HTMLCollection into Array ->
+// Array.from(tempClassList)
+// (4) [li.li-item, li.li-item, li.li-item, li.li-item]
+
+// const myConvertedArray = Array.from(tempClassList)
+
+// myConvertedArray
+// (4) [li.li-item, li.li-item, li.li-item, li.li-item]
+
+
+// myConvertedArray.forEach((li)=> {
+//     console.log(li)
+// })
+// <li class=​"li-item">​…​</li>​
+// <li class=​"li-item">​…​</li>​
+// <li class=​"li-item">​…​</li>​
+// <li class=​"li-item">​…​</li>​
+// undefined
+
+// myConvertedArray.forEach((li)=> {
+//     li.style.color = "brown"
+// })
