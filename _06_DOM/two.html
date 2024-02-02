@@ -1,0 +1,58 @@
+<!-- This file contains Relations b/w child & parent, while writing script open browsers's console to see changes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Part2</title>
+</head>
+
+<body>
+    <div class="Parent">
+        <div class="days">Monday</div>
+
+        <div class="days">Tuesday</div>
+
+        <div class="days">Wednesday</div>
+        
+        <div class="days">Thursday</div>
+    </div>
+
+
+    <script>
+        const parentResult = document.querySelector(".Parent")
+        // console.log(parentResult);
+        // console.log(parentResult.children); // gives result in HTMLCollections
+        // console.log(parentResult.children[2].innerHTML);
+
+
+        // looping through HTMLCollection with forLoop [with forloop, you don't need to convert it to Array]
+        // for (let index = 0; index < parentResult.children.length; index++) {
+        //     console.log(parentResult.children[index].innerHTML);
+        // }
+
+
+        // applying style ->
+        // parentResult.children[2].style.color = "black"
+        // parentResult.children[2].style.backgroundColor = "red"
+
+
+        // targetting children from Parent ->
+        // console.log(parentResult.firstElementChild);
+        // console.log(parentResult.
+        // lastElementChild);
+
+
+        const firstDay = document.querySelector(".days")
+        // console.log(firstDay);
+        // console.log(firstDay.parentElement);
+        // console.log(firstDay.nextElementSibling);
+
+        // childNodes very interesting
+        console.log("Nodes : ", parentResult.childNodes);
+
+
+    </script>
+</body>
+
+</html>

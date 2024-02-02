@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Element Creation</title>
+</head>
+
+<body style = "background-color: #111;">
+    
+    <script>
+        const myDiv = document.createElement("div")
+        console.log(myDiv);
+
+        myDiv.className = "userClass";
+        // myDiv.id = "userId"
+        myDiv.id = Math.round(Math.random()*10+1)
+
+        // creating user-defined attributes
+        myDiv.setAttribute("Anime","twoPiece")
+
+        // can also add style
+        myDiv.style.backgroundColor = "grey"
+        myDiv.style.padding = "10px"
+
+        // myDiv.innerText = "graffiti is ART"
+        // or [it is debatable which is better]
+        const myText = document.createTextNode("graffiti is ART")
+        myDiv.appendChild(myText)
+
+        // now adding it to console, it is in memory but for to show it in console, do this->
+        document.body.appendChild(myDiv)
+
+    </script>
+    
+</body>
+
+</html>
