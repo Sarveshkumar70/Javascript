@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Edit & Remove Elements</title>
+  </head>
+
+  <body style="background-color: #111; color: #fff">
+    <div class="languages">
+      <li>Javascript</li>
+    </div>
+
+    <script>
+        // WAYS to add list element
+
+        // 1. creating a function -> not so optimal as for appending, we have traverse all the tree(DOM)
+      function createList(langName){
+        const newList = document.createElement("li")
+        newList.innerHTML = langName
+        document.querySelector(".languages").appendChild(newList)
+      }
+
+      createList("c++")
+      createList("c")
+
+    //   2. function i.e. OPTIMAL -> more optimal than above
+    function createOptimalList(langName){
+       const newList = document.createElement("li")
+       newList.appendChild(document.createTextNode(langName))
+       document.querySelector(".languages").appendChild(newList)
+    }
+
+    createOptimalList("Python")
+
+
+    // 3. Editing list
+    const editableElement = document.querySelector("li:nth-child(2)")
+    // editableElement.textContent = "lol" // only replaces the internal text w/o changing attributes, etc.  
+
+    // replaces the whole element with another element
+    const newElement = document.createElement("li")
+    newElement.textContent = "Rust"
+    editableElement.replaceWith(newElement)
+
+
+    // edit - another way
+    // const firstElement = document.querySelector("li:first-child")
+    // firstElement.outerHTML = "<li>FORTRAN</li>"
+
+
+    // Now removing the list
+    const removeElement = document.querySelector("li:last-child")
+    removeElement.remove()
+
+
+
+    </script>
+  </body>
+</html>
