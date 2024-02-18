@@ -19,16 +19,16 @@ myButtons.forEach(function (button) {
     const getColor = e.target.id;
 
     // if(getColor == 'grey'){
-    //   docBody.style.backgroundColor = e.target.id
+    //   docBody.style.backgroundColor = getColor
     // }
     // else if(getColor == 'white'){
-    //   docBody.style.backgroundColor = e.target.id
+    //   docBody.style.backgroundColor = getColor
     // }
     // else if(getColor == 'blue'){
-    //   docBody.style.backgroundColor = e.target.id
+    //   docBody.style.backgroundColor = getColor
     // }
     // else if(getColor == 'yellow'){
-    //   docBody.style.backgroundColor = e.target.id
+    //   docBody.style.backgroundColor = getColor
     // }
 
     // or
