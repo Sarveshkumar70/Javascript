@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Html events</title>
+  </head>
+
+  <body style="background-color: #111; color: aliceblue">
+    <h2>Bombastic images</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+
+        <!-- <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" onclick="alert('owl')" ></li>  not good approach for onclick  -->
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // old approaches for onclick ->
+    // attachEvent()
+    // In jQuery - on
+
+    // this approach give's less features, but is in general okay
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl 2nd time')
+    // }
+
+    // recommended approach
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert('owl again')
+    // },false)
+
+    // read about Events like -> type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // Event Propagation with-> Event Bubbling and Capturing
+
+    // Event Bubbling -> (inside to outside ,owl first will print then images)
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log(`click inside ul`);
+    // },false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log(`owl gets clicked`);
+    // },false)
+
+    // stopPropagation() -> event will not go to the upper element (bubbling will not happen)
+    //    document.getElementById('images').addEventListener('click', function(e){
+    //        console.log(`click inside ul`);
+    //    },false)
+    //    document.getElementById('owl').addEventListener('click', function(e){
+    //        console.log(`owl gets clicked`);
+    //        e.stopPropagation()
+    //    },false)
+
+    // Capturing
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log(`click inside ul`);
+    // },true)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log(`owl gets clicked`);
+    // },true)
+
+    // preventDefault()
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log('lol');
+    // })
+
+    // removing elements by clicking on it
+    document.querySelector("#images").addEventListener("click", (e) => {
+      // console.log(e);
+      // console.log(e.target);
+      // console.log(e.target.parentNode);
+
+      // let removeElement = e.target.parentNode
+      // removeElement.remove() // check by clicking on google, all li's are cleard [problem]
+
+      // solving it
+      console.log(e.target.tagName);
+      if (e.target.tagName === "IMG") {
+        console.log(e.target.id);
+        let removeElement = e.target.parentNode;
+        removeElement.remove();
+      }
+      // or
+      // removeElement.parentNode.removeChild(removeElement)
+    });
+    
+  </script>
+</html>
