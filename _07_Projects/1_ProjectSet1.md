@@ -224,3 +224,62 @@ function newGame() {
 
 
 ```
+
+### Project - 5 KeyboardCheck
+
+```javascript
+const inert = document.querySelector('#insert');
+
+window.addEventListener('keydown',(e)=>{
+  inert.innerHTML = `
+  <table>
+  <tr>
+    <th>key</th>
+    <th>keycode</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${e.key  === ' ' ? 'Space' : e.key }</td>
+    <td>${e.keyCode }</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+  `
+});
+
+```
+
+
+### Project - 6  Unlimited colors
+
+```javascript
+
+let randomColor = function(){
+  const hexValues = '0123456789ABCDEF'
+  let mycolor = '#'
+
+  for(let i = 0; i < 6; i++){
+    mycolor += hexValues[Math.floor(Math.random()*16)]
+  }
+  return mycolor;
+};
+
+let stopColor;
+
+const changeBgColor = function(){
+ stopColor = setInterval(function(){
+    document.body.style.backgroundColor = randomColor();
+ },1000)
+}
+
+const stopBgColor = function(){
+  clearInterval(stopColor);
+  stopColor=null;
+}
+
+document.querySelector('#start').addEventListener('click',changeBgColor)
+
+document.querySelector('#stop').addEventListener('click',stopBgColor)
+
+
+```
