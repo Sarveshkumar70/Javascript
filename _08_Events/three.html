@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #101010; color: beige">
+    <h1>Page 2nd</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+    <script>
+      // 3. setInterval(), 4. clearInterval()
+      // const printAgain = (str) => {
+      //     console.log(`${str}`, Math.round(Math.random()*10));
+      // }
+
+      // const repeatAge = setInterval(printAgain,
+      // 1000, "Her age is");
+
+      // clearInterval(repeatAge)
+
+
+
+      // Task with start and stop button
+
+      let time = new Date();
+      timeNow = time.toLocaleTimeString();
+
+      const startButton = document.getElementById("start");
+
+      let repeatedFn = function () {
+        console.log(`Now time is ${timeNow}`);
+      };
+
+    //   for start button
+      let stopfn;
+      startButton.addEventListener("click", function () {
+        stopfn = setInterval(repeatedFn, 1000);
+      });
+
+      // for stopping
+      document.getElementById("stop").addEventListener("click", function () {
+        clearInterval(stopfn);
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Page 1</h1>
+    <button id="stop">stop</button>
+
+    <script>
+
+    // 1. setTimeout()
+     const sayMessage = function(){
+        console.log("Hello world!");
+      }
+      setTimeout(sayMessage, 2000) // give only reference here not function call
+
+    //   or
+    // setTimeout(function(){
+    //     console.log("Hello world!");
+    // },2000) // time is in millisecond
+
+
+    // for showing pop-ups in a website after certain time 
+    const changeHeading = ()=>{
+        document.querySelector('h1').innerHTML="Start your Journey"
+    }
+    // setTimeout(changeHeading,3000)
+
+
+    // 2. clearTimeout()
+    // if we want to block that popup for some reason
+    const stopThis = setTimeout(changeHeading,3000)
+
+    // clearTimeout(stopThis) // works but not correct way
+
+    // more logical way
+    document.querySelector("#stop").
+    addEventListener('click',function(){
+        clearTimeout(stopThis)
+        console.log(`STOPPED`);
+    })
+
+    </script>
+  </body>
+</html>
