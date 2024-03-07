@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #555;">
+    <!-- XMLHttpRequest on mdn -->
+<!--     
+Value	State	           Description
+0	   UNSENT	          Client has been created. open() not called yet.
+1	   OPENED	          open() has been called.
+2	   HEADERS_RECEIVED   send() has been called, and headers and status are available.
+3	   LOADING	          Downloading; responseText holds partial data.
+4	   DONE	              The operation is complete. -->
+
+    <script>
+
+        const myUrl = 'https://api.github.com/users/sarveshkumar70'
+
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET',myUrl)
+        // console.log(xhr.readyState)
+
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+                // const data = this.responseText
+
+                // console.log(typeof data); // string
+                // console.log(data.public_repos);  // Will not work, response from URL comes in string datatype[most of the time]
+
+                // so we have to convert string into object
+                const data = JSON.parse(this.responseText)
+                console.log(typeof data)
+                console.log(data.public_repos);
+            }
+        }
+        xhr.send()
+    </script>
+</body>
+</html>
