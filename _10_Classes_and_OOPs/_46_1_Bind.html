@@ -5,31 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React</title>
 </head>
-<body>
-    <button>Click</button>
-    
+
+<body style="background-color: #505050;">
+
+    <button>Button clicked</button>
 
     <script>
         class React{
+
             constructor(){
-                this.library = "React";
+                this.library = "React"
                 this.server = "https://localhost:300"
 
-                // requirements
                 document
-                        .querySelector("button")
-                        .addEventListener('click', this.handleClick
-                        .bind(this))
+                .querySelector('button')
+                .addEventListener('click', this.handleClick
+                .bind(this))
             }
 
             handleClick(){
-                console.log("Button clicked");
-                console.log( this);
+                console.log("Clicked");
+                console.log(this);
             }
         }
 
+        const obj1 = new React()
 
-        const obj = new React()
     </script>
 </body>
 </html>
