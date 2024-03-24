@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body style="background-color: #101010">
+    
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+
+
+    <!-- <script>
+      // lexical scoping
+
+      // function outer() {
+      //     let var1 = "Good"
+      //     function innerFirst() {
+      //         let var2 = "Happy"
+      //         console.log("Inner 1", var1);
+      //     }
+      //     innerFirst()
+
+      //     function innerTwo() {
+      //         let var3 = "night"
+      //         console.log("Inner 2", var2);
+      //     }
+      //     innerTwo()
+      //     // console.log(var2);
+      // }
+      // outer()
+
+
+    //   closure
+
+    //   function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //       console.log(name);
+    //     }
+    //     return displayName; // lexical scope is returning, not just executional context [name = "Mozilla", is also returning]
+    //   }
+
+    //   const myFunc = makeFunc();
+    //   myFunc();
+
+
+    </script> -->
+
+    <script>
+        // document.querySelector("#orange").onclick =  () => {
+        //     document.body.style.backgroundColor = "orange"
+        // }
+        // document.querySelector("#green").onclick =  () => {
+        //     document.body.style.backgroundColor = "green"
+        // }
+
+        // for 100 buttons, writing optimal sol.
+        
+        // function clickHandler(color) {
+        //     document.body.style.backgroundColor = `${color}`
+        // }
+
+        // use clouser in fn.
+         function clickHandler(color) {
+
+            return function () {
+                document.body.style.backgroundColor = `${color}`
+            }
+
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange")
+        // actually here function clickHandler("orange") is directly executing,
+        // so that's why color is changed w/o click [not working what we intended], to solve this use clouser in fn.  
+        // clickHandler("orange")
+
+        document.getElementById('green').onclick = clickHandler("green")
+
+    </script>
+
+  </body>
+</html>
