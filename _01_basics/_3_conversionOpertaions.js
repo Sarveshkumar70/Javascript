@@ -3,11 +3,12 @@ let result
 
 /*
 console.log(typeof (score))
-result=Number(score)
+// result = Number(score)  // here score value (false) changes to 0 
 console.log(typeof result)
 console.log(result);
 */
 
+//  some examples how values change -->
 // "33" => 33
 // "33abc" => NaN(Not a Number)
 // true => 1; false => 0
