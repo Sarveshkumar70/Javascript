@@ -23,7 +23,7 @@
 
    let myObj = {
       name : "manu",
-      age : "18",
+      age : "18"
    }
 
    const myFunc = function(){
