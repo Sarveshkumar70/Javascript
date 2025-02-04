@@ -68,6 +68,7 @@ function incrementNumOne(num) {
 
 
 // console.log(incrementNumTwo(10)) // in this type of function decalaration, we cannot call func. before definition
+// reason behind this concept is because of how memeory is assigned to variables(check global execution concept)
 const incrementNumTwo = function(num){
     return (num + 2)
 }
