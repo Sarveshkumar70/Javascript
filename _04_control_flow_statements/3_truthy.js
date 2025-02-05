@@ -57,7 +57,7 @@ const myObject = {}
 
 // const valueIs = null ?? undefined  // o/p-> undefined (interesting)
 
-// const valueIs = null ?? 100 ?? 20;  // o/p-> 10
+// const valueIs = null ?? 100 ?? 20;  // o/p-> 100
 
 
 // console.log(valueIs);
